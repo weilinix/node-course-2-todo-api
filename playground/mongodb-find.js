@@ -12,6 +12,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', {
     console.log('Connected to MongoDB server');
     const db = client.db('TodoApp');
 
+    // 按 id 查找
     // db.collection('Todos').find({
     //     _id: new ObjectID("5bec3980f271ef1f9def8596")
     // }).toArray().then((docs) => {
@@ -21,12 +22,14 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', {
     //     console.log('Unable to fetch todos', err);
     // });
 
+    // 查找数量
     // db.collection('Todos').find().count().then((count) => {
     //     console.log(`Todos count: ${count}`);
     // }, (err) => {
     //     console.log('Unable to fetch todos', err);
     // });
 
+    // 按字段查找
     db.collection('Users').find({
         name: 'Michael'
     }).toArray().then((docs) => {
